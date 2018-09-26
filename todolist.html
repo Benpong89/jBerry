@@ -43,6 +43,12 @@
       display: flex;
     }
 
+    .completed {
+      background: gray;
+      text-decoration: line-through;
+      border-radius: 5px;
+    }
+
     .close {
       margin-left: auto;
       padding: 5px;
@@ -64,7 +70,7 @@
     <li>Learn Ruby</li>
     <li>Update resume</li>
     <li>Javascript game proposal</li>
-    <li class="complete">Fullstack project</li>
+    <li class="completed">Fullstack project</li>
     <li>Read Cracking the Coding Interview</li>
     <li>Code Intensive project</li>
   </ul>
@@ -78,6 +84,16 @@
       input.array[0].value = "";
       $b("#todo-ul").append(`<li>${val}</li>`);
     });
+
+    //crossed off todo item
+    let todoList = $b('ul').array[0]
+    $b(todoList).on('click', function(event) {
+      if ($b(event.target).attr("class") === "completed") {
+        $b(event.target).removeClass('completed')
+      } else {
+        $b(event.target).addClass('completed');
+      }
+    })
 
     // delete item button
     let todoItems = $b('li').array
@@ -93,10 +109,7 @@
         div.style.display = "none";
       }
     }
-
-    //checked sybmol
   </script>
-
 </body>
 
 </html>

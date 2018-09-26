@@ -1,10 +1,3 @@
-TODO :
-
-1.  Use all of my jBerry functions in my todo list.
-2.  Code snippet function examples
-3.  Write custom functions
-4.  Separate out CSS in another file
-
 [Live demo!](https:)
 
 jBerry is a library that can be used for manipulating, traversing and event handling in the DOM. While the functions of jBerry can accomplished with vanilla Javascript, utilizing jBerry allows for DRY and shorter code.
@@ -43,3 +36,10 @@ remove()
 empty()
 on()
 off()
+
+TODO :
+
+1.  Use all of my jBerry functions in my todo list.
+2.  Code snippet function examples
+3.  Write custom functions?
+4.  Separate out CSS in another file
