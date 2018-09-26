@@ -4,7 +4,9 @@ jBerry is a library that can be used for manipulating, traversing and event hand
 
 Include the following script inside of your HTML document.
 
+```
 <script type="text/javascript" src="./lib/jberry.js" charset="utf-8"></script>
+```
 
 The core function of jBerry is " $b(arg) ". This function utilizes vanilla DOM function " querySelectorAll() " to select and return a Nodelist of HTML elements that match the arg. Once we have the Nodelist, we convert the Nodelist into an array and pass it in as a new instance of a DOMNodeCollection. jBerry methods are defined inside of this class.
 
@@ -42,4 +44,3 @@ TODO :
 1.  Use all of my jBerry functions in my todo list.
 2.  Code snippet function examples
 3.  Write custom functions?
-4.  Separate out CSS in another file
