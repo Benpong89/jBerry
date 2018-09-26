@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>jBerry Todo List</title>
+  <script type="text/javascript" src="./lib/jberry.js" charset="utf-8"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+  <style>
+    html, body {
+      height: 100%;
+      font-family:sans-serif;
+    }
+
+    html {
+      display: table;
+      margin: auto;
+      background-image: url(https://image.freepik.com/free-vector/berries-pattern-background_1431-1.jpg);
+    }
+
+    body {
+      display: table-cell;
+      vertical-align: top;
+    }
+
+    .header {
+      text-align: center;
+      background-color: lightblue;
+      border-radius: 5px;
+    }
+
+    #todo_input {
+      border-radius: 5px;
+      padding: 5px;
+    }
+
+    ul {
+      background-color: lightblue;
+      border-radius: 5px;
+    }
+
+    li {
+      display: flex;
+    }
+
+    .close {
+      margin-left: auto;
+      padding: 5px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="myDIV" class="header">
+    <h2>jBerry ToDo List !</h2>
+    <form id='todo-form'>
+      <input id='todo_input' type="text" placeholder="What to do....?">
+      <button type="submit" name="button">Add</button>
+    </form>
+  </div>
+
+  <ul id="todo-ul">
+    <li>Learn Ruby</li>
+    <li>Update resume</li>
+    <li>Javascript game proposal</li>
+    <li class="complete">Fullstack project</li>
+    <li>Read Cracking the Coding Interview</li>
+    <li>Code Intensive project</li>
+  </ul>
+
+  <script>
+    // Add todo function
+    $b("#todo-form").on("submit", event => {
+      event.preventDefault();
+      const input = $b("#todo_input");
+      const val = input.array[0].value
+      input.array[0].value = "";
+      $b("#todo-ul").append(`<li>${val}</li>`);
+    });
+
+    // delete item button
+    let todoItems = $b('li').array
+    for (todoItem of todoItems) {
+      $b(todoItem).append("<div class='close'>X</div>")
+      let closeButton = $b(todoItem).find("div")
+    }
+    //delete item function
+    let closeButtons = $b('.close').array
+    for (closeButton of closeButtons) {
+      closeButton.onclick = function() {
+        var div = this.parentElement;
+        div.style.display = "none";
+      }
+    }
+
+    //checked sybmol
+  </script>
+
+</body>
+
+</html>
+
+<!-- let todoList = $b('ul').array
+todoList.addEventListener('click', function(event) {
+  if(event.target.classList)
+}) -->
+
+
+<!-- // Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+} -->
