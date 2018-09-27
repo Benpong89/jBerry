@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Fahkwang:500');
+@import url('https://fonts.googleapis.com/css?family=Chakra+Petch:700');
+
 html, body {
   height: 100%;
   font-family: sans-serif;
@@ -6,28 +10,40 @@ html, body {
 html {
   display: table;
   margin: auto;
-  background-image: url(https://image.freepik.com/free-vector/berries-pattern-background_1431-1.jpg);
+  background: url(lib/72a184aa7846cad0d5a82cf55dc3f406.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 body {
   display: table-cell;
   vertical-align: top;
+  min-width: 320;
 }
 
 .header {
+  font-family: 'Pacifico', cursive;
+  font-size: 24px;
   text-align: center;
-  background-color: lightblue;
   border-radius: 5px;
 }
 
 #todo_input {
-  border-radius: 5px;
-  padding: 5px;
+  text-align: center;
+  font-family: 'Fahkwang', sans-serif;
+  font-size: 14px;
+  padding: 10px;
+  width: 90%;
+  background: none;
+  border: nonel;
 }
 
 ul {
-  background-color: lightblue;
+  font-family: 'Fahkwang', sans-serif;
   border-radius: 5px;
+  min-width: 320px;
 }
 
 li {
@@ -35,7 +51,6 @@ li {
 }
 
 .completed {
-  background: gray;
   text-decoration: line-through;
   border-radius: 5px;
 }
@@ -43,4 +58,28 @@ li {
 .close {
   margin-left: auto;
   padding: 5px;
+}
+
+.button {
+  display: none;
+}
+
+.credit {
+  font-family: 'Chakra Petch', sans-serif;
+  text-align: right;
+  color: #355C7D;
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+a {
+  color: #355C7D;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+  color: #6c5c7b;
 }
