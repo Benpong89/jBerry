@@ -26,6 +26,24 @@
     <li>Code Intensive project</li>
   </ul>
 
+  <blockquote class='message' id="message2" contenteditable="true"><q>Tough times never last, only tough people do...</q>
+  </blockquote>
+
+  <blockquote class='message' id="message1" contenteditable="true"><q>Begin at the beginning… and go on till you come to the end...</q>
+  </blockquote>
+
+  <blockquote class='message' id="message3" contenteditable="true"><q>Make each day your masterpiece...</q>
+  </blockquote>
+
+  <blockquote class='message' id="message4" contenteditable="true"><q>To be the best, you must be able to handle the worst...</q>
+  </blockquote>
+
+  <blockquote class='message' id="message5" contenteditable="true"><q>What we think, we become...</q>
+  </blockquote>
+
+  <blockquote class='message' id="message6" contenteditable="true"><q>It is never too late to be what you might have been...</q>
+  </blockquote>
+
   <script>
     // Add todo function
     $b("#todo-form").on("submit", event => {
@@ -60,6 +78,47 @@
         div.style.display = "none";
       }
     }
+
+
+    function splitWords() {
+      let quote = document.querySelector(".message q");
+      quote.hidden = false;
+      quote.innerText.replace(/(<([^>]+)>)/ig, "");
+      quotewords = quote.innerText.split(" "),
+        wordCount = quotewords.length;
+      quote.innerHTML = "";
+      for (let i = 0; i < wordCount; i++) {
+        quote.innerHTML += "<span>" + quotewords[i] + "</span>";
+        if (i < quotewords.length - 1) {
+          quote.innerHTML += " ";
+        }
+      }
+      quotewords = document.querySelectorAll(".message q span");
+      fadeWords(quotewords);
+      quote.parentElement.removeAttribute("class")
+      // quote.parentElement.setAttribute("class", "solid")
+    }
+
+    function getRandom(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    function fadeWords(quotewords) {
+      Array.prototype.forEach.call(quotewords, function(word) {
+        let animate = word.animate([{
+          opacity: 0,
+          filter: "blur(" + getRandom(2, 5) + "px)"
+        }, {
+          opacity: 1,
+          filter: "blur(0px)"
+        }], {
+          duration: 1000,
+          delay: getRandom(500, 3300),
+          fill: 'forwards'
+        })
+      })
+    }
+    setInterval(splitWords, 3000)
   </script>
 
   <div class="credit">

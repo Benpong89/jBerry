@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Pacifico');
-@import url('https://fonts.googleapis.com/css?family=Fahkwang:500');
-@import url('https://fonts.googleapis.com/css?family=Chakra+Petch:700');
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
+@import url("https://fonts.googleapis.com/css?family=Fahkwang:500");
+@import url("https://fonts.googleapis.com/css?family=Chakra+Petch:700");
 
-html, body {
+html,
+body {
   height: 100%;
   font-family: sans-serif;
 }
@@ -24,7 +25,7 @@ body {
 }
 
 .header {
-  font-family: 'Pacifico', cursive;
+  font-family: "Pacifico", cursive;
   font-size: 24px;
   text-align: center;
   border-radius: 5px;
@@ -32,16 +33,16 @@ body {
 
 #todo_input {
   text-align: center;
-  font-family: 'Fahkwang', sans-serif;
+  font-family: "Fahkwang", sans-serif;
   font-size: 14px;
   padding: 10px;
   width: 90%;
   background: none;
-  border: nonel;
+  border-color: #355c7d;
 }
 
 ul {
-  font-family: 'Fahkwang', sans-serif;
+  font-family: "Fahkwang", sans-serif;
   border-radius: 5px;
   min-width: 320px;
 }
@@ -60,14 +61,18 @@ li {
   padding: 5px;
 }
 
+.close:hover {
+  cursor: pointer;
+}
+
 .button {
   display: none;
 }
 
 .credit {
-  font-family: 'Chakra Petch', sans-serif;
+  font-family: "Chakra Petch", sans-serif;
   text-align: right;
-  color: #355C7D;
+  color: #355c7d;
   font-size: 12px;
   position: absolute;
   top: 0;
@@ -75,11 +80,104 @@ li {
 }
 
 a {
-  color: #355C7D;
+  color: #355c7d;
   text-decoration: none;
 }
 
 a:hover {
   cursor: pointer;
   color: #6c5c7b;
+}
+
+.message {
+  display: none;
+}
+
+#message1 {
+  font-size: 12px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+#message2 {
+  font-size: 12px;
+  position: absolute;
+  top: 210px;
+  left: 10px;
+}
+
+#message3 {
+  font-size: 12px;
+  position: absolute;
+  top: 400px;
+  left: 15px;
+}
+
+#message4 {
+  font-size: 12px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+#message5 {
+  font-size: 12px;
+  position: absolute;
+  top: 200px;
+  right: 0px;
+}
+
+#message6 {
+  font-size: 12px;
+  position: absolute;
+  top: 450px;
+  right: 20px;
+}
+
+blockquote {
+  font-size: 3rem;
+}
+
+cite {
+  display: block;
+  text-align: right;
+  font-family: Verdana, Arial, sans-serif;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #aaa;
+  font-style: normal;
+}
+
+blockquote q {
+  font-family: Georgia, serif;
+  font-style: italic;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+}
+
+blockquote q span {
+  will-change: opacity, filter;
+  opacity: 0;
+  filter: blur(0px);
+}
+
+q {
+  quotes: "“""”""‘""’";
+}
+
+q:before {
+  display: none;
+  content: open-quote;
+  margin-right: 0.8rem;
+}
+
+q:after {
+  content: close-quote;
+}
+
+q:before,
+q:after {
+  color: #ccc;
+  font-size: 4rem;
 }
