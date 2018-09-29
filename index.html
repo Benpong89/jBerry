@@ -18,21 +18,21 @@
   </div>
 
   <ul id="todo-ul">
-    <li>Learn Ruby</li>
     <li>Update resume</li>
-    <li>Javascript game proposal</li>
+    <li>Learn Python</li>
+    <li>Javascrip game</li>
     <li class="completed">Fullstack project</li>
     <li>Read Cracking the Coding Interview</li>
     <li>Code Intensive project</li>
   </ul>
 
-  <blockquote class='message' id="message2" contenteditable="true"><q>Tough times never last, only tough people do...</q>
+  <blockquote class='message' id="message2" contenteditable="true"><q>Make each day your masterpiece...</q>
   </blockquote>
 
   <blockquote class='message' id="message1" contenteditable="true"><q>Begin at the beginning… and go on till you come to the end...</q>
   </blockquote>
 
-  <blockquote class='message' id="message3" contenteditable="true"><q>Make each day your masterpiece...</q>
+  <blockquote class='message' id="message3" contenteditable="true"><q>Tough times never last, only tough people do...</q>
   </blockquote>
 
   <blockquote class='message' id="message4" contenteditable="true"><q>To be the best, you must be able to handle the worst...</q>
@@ -52,6 +52,7 @@
       const val = input.array[0].value
       input.array[0].value = "";
       $b("#todo-ul").append(`<li>${val}</li>`);
+      $b($b('li').array[$b('li').array.length - 1]).append("<div class='close'>X</div>")
     });
 
     //crossed off todo item

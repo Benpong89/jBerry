@@ -75,8 +75,8 @@ li {
   color: #355c7d;
   font-size: 12px;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 5px;
+  right: 5px;
 }
 
 a {
@@ -136,7 +136,8 @@ a:hover {
 }
 
 blockquote {
-  font-size: 3rem;
+  font-size: 12px;
+  margin: 0;
 }
 
 cite {
