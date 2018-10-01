@@ -23,24 +23,3 @@ The core function of jBerry is `$b(arg)`. This function utilizes vanilla DOM fun
 | `removeClass(className)` | Removes classNames from each element in the array                               |
 | `remove()`               | Removes the set of matched elements from the DOM                                |
 | `empty()`                | Clears the content of all nodes in the internal array                           |
-
-#### Code snippet examples for each method
-
-html()
-find(selector)
-append()
-empty()
-attr(attributeName)
-children()
-addClass(className)
-removeClass(className)
-remove()
-empty()
-on()
-off()
-
-TODO :
-
-1.  Use all of my jBerry functions in my todo list.
-2.  Code snippet function examples
-3.  Write custom functions?
