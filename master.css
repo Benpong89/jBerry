@@ -11,11 +11,21 @@ body {
 html {
   display: table;
   margin: auto;
-  background: url(lib/72a184aa7846cad0d5a82cf55dc3f406.jpg) no-repeat center center fixed;
+  background: url(lib/72a184aa7846cad0d5a82cf55dc3f406.jpg) no-repeat center
+    center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 body {
@@ -29,6 +39,11 @@ body {
   font-size: 24px;
   text-align: center;
   border-radius: 5px;
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+  -ms-animation: fadein 2s; /* Internet Explorer */
+  -o-animation: fadein 2s; /* Opera < 12.1 */
+  animation: fadein 2s;
 }
 
 #todo_input {
@@ -90,95 +105,16 @@ a:hover {
 }
 
 .message {
-  display: none;
-}
-
-#message1 {
+  margin: auto;
+  margin-bottom: 10px;
+  margin-top: 0;
   font-size: 12px;
-  position: absolute;
+  max-width: 250px;
+  min-height: 50px;
   top: 20px;
   left: 20px;
-}
-
-#message2 {
-  font-size: 12px;
-  position: absolute;
-  top: 210px;
-  left: 10px;
-}
-
-#message3 {
-  font-size: 12px;
-  position: absolute;
-  top: 400px;
-  left: 15px;
-}
-
-#message4 {
-  font-size: 12px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-
-#message5 {
-  font-size: 12px;
-  position: absolute;
-  top: 200px;
-  right: 0px;
-}
-
-#message6 {
-  font-size: 12px;
-  position: absolute;
-  top: 450px;
-  right: 20px;
-}
-
-blockquote {
-  font-size: 12px;
-  margin: 0;
-}
-
-cite {
-  display: block;
-  text-align: right;
-  font-family: Verdana, Arial, sans-serif;
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #aaa;
-  font-style: normal;
-}
-
-blockquote q {
   font-family: Georgia, serif;
   font-style: italic;
   letter-spacing: 0.1rem;
   text-decoration: none;
-}
-
-blockquote q span {
-  will-change: opacity, filter;
-  opacity: 0;
-  filter: blur(0px);
-}
-
-q {
-  quotes: "“""”""‘""’";
-}
-
-q:before {
-  display: none;
-  content: open-quote;
-  margin-right: 0.8rem;
-}
-
-q:after {
-  content: close-quote;
-}
-
-q:before,
-q:after {
-  color: #ccc;
-  font-size: 4rem;
 }

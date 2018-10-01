@@ -12,6 +12,7 @@
 <body>
   <div id="myDIV" class="header">
     <h2>Task On</h2>
+    <blockquote class='message'><q></q></blockquote>
     <form id='todo-form'>
       <input id='todo_input' type="text" placeholder="Task to complete...">
       <button type="submit" class="button">Add</button>
@@ -21,29 +22,12 @@
   <ul id="todo-ul">
     <li>Update resume</li>
     <li>Learn Python</li>
-    <li>Javascrip game</li>
+    <li>JavaScript game</li>
     <li class="completed">Fullstack project</li>
     <li>Read Cracking the Coding Interview</li>
     <li>Code Intensive project</li>
   </ul>
 
-  <blockquote class='message' id="message2" contenteditable="true"><q>Make each day your masterpiece...</q>
-  </blockquote>
-
-  <blockquote class='message' id="message1" contenteditable="true"><q>Begin at the beginning… and go on till you come to the end...</q>
-  </blockquote>
-
-  <blockquote class='message' id="message3" contenteditable="true"><q>Tough times never last, only tough people do...</q>
-  </blockquote>
-
-  <blockquote class='message' id="message4" contenteditable="true"><q>To be the best, you must be able to handle the worst...</q>
-  </blockquote>
-
-  <blockquote class='message' id="message5" contenteditable="true"><q>What we think, we become...</q>
-  </blockquote>
-
-  <blockquote class='message' id="message6" contenteditable="true"><q>It is never too late to be what you might have been...</q>
-  </blockquote>
 
   <script>
     // Add todo function
@@ -54,6 +38,7 @@
       input.array[0].value = "";
       $b("#todo-ul").append(`<li>${val}</li>`);
       $b($b('li').array[$b('li').array.length - 1]).append("<div class='close'>X</div>")
+      deleteItem()
     });
 
     //crossed off todo item
@@ -73,54 +58,40 @@
       let closeButton = $b(todoItem).find("div")
     }
     //delete item function
-    let closeButtons = $b('.close').array
-    for (closeButton of closeButtons) {
-      closeButton.onclick = function() {
-        var div = this.parentElement;
-        div.style.display = "none";
-      }
-    }
 
-
-    function splitWords() {
-      let quote = document.querySelector(".message q");
-      quote.hidden = false;
-      quote.innerText.replace(/(<([^>]+)>)/ig, "");
-      quotewords = quote.innerText.split(" "),
-        wordCount = quotewords.length;
-      quote.innerHTML = "";
-      for (let i = 0; i < wordCount; i++) {
-        quote.innerHTML += "<span>" + quotewords[i] + "</span>";
-        if (i < quotewords.length - 1) {
-          quote.innerHTML += " ";
+    function deleteItem() {
+      let closeButtons = $b('.close').array
+      for (closeButton of closeButtons) {
+        closeButton.onclick = function() {
+          let div = this.parentElement;
+          div.style.display = "none";
         }
       }
-      quotewords = document.querySelectorAll(".message q span");
-      fadeWords(quotewords);
-      quote.parentElement.removeAttribute("class")
-      // quote.parentElement.setAttribute("class", "solid")
     }
 
-    function getRandom(min, max) {
-      return Math.random() * (max - min) + min;
+    function revealQuote() {
+      let quoteArray = [
+        "Make each day your masterpiece..",
+        "Begin at the beginning… and go on till you come to the end...",
+        "Tough times never last, only tough people do...",
+        "To be the best, you must be able to handle the worst...",
+        "What we think, we become...",
+        "It is never too late to be what you might have been...",
+        "Nothing is impossible, the word itself says ‘I’m possible’!...",
+        "You never fail until you stop trying...",
+        "Don’t judge each day by the harvest you reap but by the seeds that you plant...",
+        "Be the change that you wish to see in the world...",
+        "Always do what you are afraid to do...",
+        "Pain is temporary. Quitting lasts forever....",
+      ]
+
+      let quote = quoteArray[Math.floor(Math.random() * quoteArray.length)];
+      $b('q').empty()
+      $b('q').append(quote)
     }
 
-    function fadeWords(quotewords) {
-      Array.prototype.forEach.call(quotewords, function(word) {
-        let animate = word.animate([{
-          opacity: 0,
-          filter: "blur(" + getRandom(2, 5) + "px)"
-        }, {
-          opacity: 1,
-          filter: "blur(0px)"
-        }], {
-          duration: 1000,
-          delay: getRandom(500, 3300),
-          fill: 'forwards'
-        })
-      })
-    }
-    setInterval(splitWords, 3000)
+    deleteItem()
+    setInterval(revealQuote, 8000)
   </script>
 
   <div class="credit">
