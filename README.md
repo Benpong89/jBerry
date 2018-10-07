@@ -1,6 +1,6 @@
-[Live demo!](benpong.com/jBerry)
+[Live demo!](https://benpong.com/jBerry/)
 
-jBerry is a library that can be used for manipulating, traversing and event handling in the DOM. While the functions of jBerry can accomplished with vanilla Javascript, utilizing jBerry allows for DRY and shorter code.
+jBerry is a JavaScript library that can be used for manipulating, traversing and event handling in the DOM. While the functions of jBerry can accomplished with vanilla Javascript, utilizing jBerry allows for DRY and shorter code.
 
 Include the following script inside of your HTML document.
 
