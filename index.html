@@ -20,12 +20,23 @@
   </div>
 
   <ul id="todo-ul">
-    <li>Update resume</li>
-    <li>Learn Python</li>
-    <li>JavaScript game</li>
-    <li class="completed">Fullstack project</li>
-    <li>Read Cracking the Coding Interview</li>
-    <li>Code Intensive project</li>
+    <div class="flex" <li>Update resume</li><span></span>
+    </div>
+    <div class="flex">
+      <li>Learn Python</li><span></span>
+    </div>
+    <div class="flex">
+      <li>JavaScript game</li><span></span>
+    </div>
+    <div class="flex">
+      <li class="completed">Fullstack project</li><span></span>
+    </div>
+    <div class="flex">
+      <li>Read Cracking the Coding Interview</li><span></span>
+    </div>
+    <div class="flex">
+      <li>Code Intensive project</li><span></span>
+    </div>
   </ul>
 
 
@@ -36,8 +47,7 @@
       const input = $b("#todo_input");
       const val = input.array[0].value
       input.array[0].value = "";
-      $b("#todo-ul").append(`<li>${val}</li>`);
-      $b($b('li').array[$b('li').array.length - 1]).append("<div class='close'>X</div>")
+      $b("#todo-ul").append(`<div class="flex"><li>${val}</li><span><div class='close'>X</div></span></div>`);
       deleteItem()
     });
 
@@ -52,19 +62,20 @@
     })
 
     // delete item button
-    let todoItems = $b('li').array
+    let todoItems = $b('span').array
     for (todoItem of todoItems) {
       $b(todoItem).append("<div class='close'>X</div>")
-      let closeButton = $b(todoItem).find("div")
     }
-    //delete item function
 
+    //delete item function
     function deleteItem() {
       let closeButtons = $b('.close').array
       for (closeButton of closeButtons) {
         closeButton.onclick = function() {
-          let div = this.parentElement;
-          div.style.display = "none";
+          let x = this.parentElement;
+          let text = this.parentElement.previousSibling
+          x.style.display = "none";
+          text.style.display = "none";
         }
       }
     }
