@@ -15,9 +15,10 @@
     <blockquote class='message'><q></q></blockquote>
     <form id='todo-form'>
       <input id='todo_input' type="text" placeholder="Task to complete...">
-      <button type="submit" class="button">Add</button>
+      <button disabled id='button' type="submit" class="button">Add</button>
     </form>
   </div>
+
 
   <ul id="todo-ul">
     <div class="flex" <li>Update resume</li><span></span>
@@ -39,11 +40,11 @@
     </div>
   </ul>
 
-
   <script>
     // Add todo function
     $b("#todo-form").on("submit", event => {
       event.preventDefault();
+      $b('#button').array[0].disabled = true
       const input = $b("#todo_input");
       const val = input.array[0].value
       input.array[0].value = "";
@@ -79,6 +80,15 @@
         }
       }
     }
+
+    //Prevent empty entries
+    $b("#todo_input").on("change", function() {
+      if (/\S/.test($b('#todo_input').array[0].value)) {
+        $b('#button').array[0].disabled = false
+      } else {
+        $b('#button').array[0].disabled = true
+      }
+    });
 
     function revealQuote() {
       let quoteArray = [

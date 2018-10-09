@@ -23,3 +23,4 @@ The core function of jBerry is `$b(arg)`. This function utilizes vanilla DOM fun
 | `removeClass(className)` | Removes classNames from each element in the array                               |
 | `remove()`               | Removes the set of matched elements from the DOM                                |
 | `empty()`                | Clears the content of all nodes in the internal array                           |
+| `on()`                   | Attach an event handler function for one or more events                         |
