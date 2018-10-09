@@ -24,3 +24,39 @@ The core function of jBerry is `$b(arg)`. This function utilizes vanilla DOM fun
 | `remove()`               | Removes the set of matched elements from the DOM                                |
 | `empty()`                | Clears the content of all nodes in the internal array                           |
 | `on()`                   | Attach an event handler function for one or more events                         |
+
+### jBerry function examples
+
+Crossing off a Todo List item
+
+```
+let todoList = $b('ul').array[0]
+$b(todoList).on('click', function(event) {
+  if ($b(event.target).attr("class") === "completed") {
+    $b(event.target).removeClass('completed')
+  } else {
+    $b(event.target).addClass('completed');
+  }
+})
+```
+
+Adding a delete button
+
+```
+let todoItems = $b('span').array
+for (todoItem of todoItems) {
+  $b(todoItem).append("<div class='close'>X</div>")
+}
+```
+
+Preventing empty entries
+
+```
+$b("#todo_input").on("change", function() {
+  if (/\S/.test($b('#todo_input').array[0].value)) {
+    $b('#button').array[0].disabled = false
+  } else {
+    $b('#button').array[0].disabled = true
+  }
+});
+```
